@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    string a;
+    cin >> a;
+    int b = a.length();
+    int c;
+    cin >> c;
+    c = c%26;
+    if(c==0){
+      cout << a;
+    }else{
+      for(int i=0;i<b;i++){
+        a[i] = a[i]-c;
+        int x = a[i];
+        if(x<97){
+          a[i] = 123-97+x;
+        }
+        cout << a[i];
+      }
+    }
+    return 0;
+}

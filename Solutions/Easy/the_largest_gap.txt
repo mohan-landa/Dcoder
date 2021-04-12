@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+//Compiler version gcc  6.3.0
+
+int main()
+{
+  int n,c = 0;;
+  scanf("%d",&n);
+  int a[n],m=0;
+  for(int i=0;i<n;i++){
+    scanf("%d",&a[i]);
+  }
+  for(int i=0;i<n;i++){
+    for(int j=i;j<n;j++){
+      c = a[j]-a[i];
+      if(c<0){
+        c = -c;
+      }
+      if(m<c){
+        m = c;
+      }
+    }
+  }
+  printf("%d",m);
+  return 0;
+}

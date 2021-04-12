@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+//Compiler version gcc  6.3.0
+
+int main()
+{
+  int a,b,c,f=0;
+  scanf("%d%d%d",&a,&b,&c);
+  for(int i=a;i<=b;i++){
+    if(i%c==0){
+      f++;
+    }
+  }
+  printf("%d",f);
+  return 0;
+}

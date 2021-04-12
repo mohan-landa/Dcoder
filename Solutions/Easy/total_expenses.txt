@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+//Compiler version gcc  6.3.0
+
+int main()
+{
+  int n;
+  scanf("%d",&n);
+  double a[n];
+  for(int i=0;i<n;i++){
+    scanf("%lf",&a[i]);
+    if(a[i]<=1000){
+      printf("%.2lf\n",a[i]);
+    }else{
+      double c;
+      c = a[i]/10;
+      printf("%.2lf\n",a[i]-c);
+    }
+  }
+  return 0;
+}

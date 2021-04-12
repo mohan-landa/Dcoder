@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    string a,b;
+    cin >> a >> b;
+    double c = stod(a);
+    double d = stod(b);
+    if(d>=c){
+      cout << "Yes";
+    }else{
+      cout << "No";
+    }
+    return 0;
+}

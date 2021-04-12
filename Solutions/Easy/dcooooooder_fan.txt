@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+//Compiler version gcc  6.3.0
+
+int main()
+{
+  int a;
+  scanf("%d",&a);
+  printf("Dc");
+  for(int i=0;i<a;i++){
+    
+    printf("o");
+  }
+  printf("der");
+  return 0;
+}

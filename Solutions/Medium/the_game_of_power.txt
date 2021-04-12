@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int t;
+    cin >> t;
+    for(int i=0;i<t;i++){
+      int a;
+      cin >> a;
+      int j=0;
+      int b=pow(j,2);
+      while(b<=a){
+        j++;
+        b = pow(j,2);
+      }
+      b = pow(j-1,2);
+      int x = a-b;
+      int y = pow(j,2)-a;
+     
+      if(x<y){
+        cout << x<< endl;
+      }else{
+        cout << y << endl;
+      }
+    }
+    return 0;
+}

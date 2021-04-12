@@ -1,0 +1,78 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int t;
+    cin >> t;
+    for(int o=0;o<t;o++){
+      int n;
+      cin >> n;
+      if(n==1){
+        cout << 1 << endl;
+      }else{
+        
+      int z = 0,a[n];
+      
+      for(int i=0;i<n;i++){
+        a[i] = i;
+      }
+      
+      for(int i=0;i<n;i++){
+        
+        if(i>=n){
+          i = i-n;
+        }
+        
+        while(a[i]==-1){
+          i++;
+          if(i>=n){
+          i = i-n;
+        }
+        } 
+        
+        if(i<n&&a[i]!=-1){
+          i++;
+          if(i>=n){
+          i = i-n;
+        }
+        while(a[i]==-1){
+          i++;
+          if(i>=n){
+          i = i-n;
+        }
+        }
+        a[i] = -1;
+        //z = i;
+        if(i==n-1){
+          i=-1;
+        }
+        if(i>=n){
+          i=i-n;
+        }
+        }
+        int x = 0;
+        for(int j=0;j<n;j++){
+          if(a[j]==-1){
+            x++;
+          }
+        }
+        if(x==n-1){
+          i = n-1;
+        }
+      }
+      
+      for(int i=0;i<n;i++){
+        if(a[i]!=-1){
+          z = i;
+        }
+      // cout << a[i] << " ";
+      }
+      cout << z+1 << endl;
+      //cout << endl;
+      }
+    }
+    return 0;
+}

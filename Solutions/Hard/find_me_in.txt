@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int a,b,c,d,e,f;
+    cin>>a>>b>>c>>d>>e>>f;
+    if(a>b){
+      int t = a;
+      a = b;
+      b = t;
+    }
+    if(c>d){
+      int t = c;
+      c = d;
+      d = t;
+    }
+    if(e>f){
+      int t = e;
+      e = f;
+      f = t;
+    }
+    /*cout << a << " " << b << endl;
+    cout << c << " " << d << endl;
+    cout << e << " " << f << endl;*/
+    int x = a*b;
+    int y = (c*d)+(e*f);
+    if(x<y){
+      cout << "No";
+    }else{
+      int m = c+e;
+      int n = d+f;
+      int o = c+f;
+      int p = d+e;
+      if(m>b){
+        cout << "No";
+      }else{
+        cout << "Yes";
+      }
+    }
+    return 0;
+}

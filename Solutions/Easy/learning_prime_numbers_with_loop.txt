@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int a,b;
+    cin>>a>>b;
+    for(int i=a;i<b+1;i++){
+      if(i==2 || i==3 || i==5 || i==7){
+        cout << i << endl;
+      }
+      if(i!=1 && i%2!=0 && i%3!=0 && i%10!=5 && i%7!=0){
+        cout << i << endl;
+      }
+    }
+    return 0;
+}

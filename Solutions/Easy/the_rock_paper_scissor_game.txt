@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int n;
+    cin >> n;
+    for(int i=0;i<n;i++){
+      char a,b;
+      cin >> a >> b;
+      if(a==b){
+        cout << "Draw" << endl;
+      }else if((a=='R' && b=='S')||(a=='S'&&b=='P')||(a=='P'&&b=='R')){
+        cout << "Dcoder" << endl;
+      }else{
+        cout << "You" << endl;
+      }
+    }
+    return 0;
+}

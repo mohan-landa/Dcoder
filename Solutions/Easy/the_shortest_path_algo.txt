@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+
+//Compiler version gcc  6.3.0
+
+int main()
+{
+  int a,b,c,d;
+  scanf("%d%d%d%d",&a,&b,&c,&d);
+  int e,f;
+  e = (a*a)+(b*b);
+  f = (c*c)+(d*d);
+  int g = pow(e,0.5);
+  int h = pow(f,0.5);
+  if(g>h){
+    
+    printf("B");
+  }else{
+    printf("A");
+  }
+  return 0;
+}

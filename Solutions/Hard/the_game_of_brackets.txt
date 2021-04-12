@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  string s;
+  cin >> s;
+  int l = s.length();
+  vector<char> a(l);
+  int cnt = 0;
+  for(int i=0;i<l;i++){
+    if(s[i]=='{'||s[i]=='('||s[i]=='['){
+      a[cnt] = s[i];
+      cnt++;
+    }else if(s[i]==')'){
+      if(a[cnt-1]=='('){
+        a[cnt-1] = ' ';
+        cnt--;
+      }else{
+        cout << "No";
+        return 0;
+      }
+    }else if(s[i]=='}'){
+      if(a[cnt-1]=='{'){
+        a[cnt-1] = ' ';
+        cnt--;
+      }else{
+        cout << "No";
+        return 0;
+      }
+    }else if(s[i]==']'){
+      if(a[cnt-1]=='['){
+        a[cnt-1] = ' ';
+        cnt--;
+      }else{
+        cout << "No";
+        return 0;
+      }
+    }
+  }
+  if(cnt==0){
+    cout << "Yes";
+  }else{
+    cout << "No";
+  }
+  return 0;
+}

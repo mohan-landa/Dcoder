@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    string a,b;
+    cin >> a >> b;
+    int c = a.length();
+    int d = b.length();
+    if(c!=d){
+      cout << "No";
+    }else{
+      for(int i=0;i<c;i++){
+        for(int j=i;j<c;j++){
+          if(a[i]>a[j]){
+            char e = a[i];
+            a[i] = a[j];
+            a[j] = e;
+            
+          }
+          if(b[i]>b[j]){
+            char f = b[i];
+            b[i] = b[j];
+            b[j] = f;
+          }
+        }
+      }
+      
+    //  cout << a << "\n" << b;
+      if(a==b){
+        cout << "Yes";
+      }else{
+        cout << "No";
+      }
+    }
+}

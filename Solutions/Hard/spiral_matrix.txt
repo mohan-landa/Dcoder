@@ -1,0 +1,95 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int n;
+  cin >> n;
+  /*if(n==8){
+    cout << "2 3 " << "\n7 5 \n";
+    return 0;
+  }*/
+  vector<int> a;
+  for(int i=2;i<=n;i++){
+    int c = 0;
+    for(int j=2;j<i;j++){
+      if(i%j==0){
+        c++;
+      }
+    }
+    if(c==0){
+      a.push_back(i);
+    }
+  }
+  int l = a.size();
+  int mrc = sqrt(l);
+  int m[mrc][mrc];
+  for(int i=0;i<mrc;i++){
+    for(int j=0;j<mrc;j++){
+      m[i][j] = 0;
+    }
+  }
+  int cnt = 0;
+  int r = 1;
+  int x = 0,y = 0;
+  int z = 0;
+  while(cnt!=l){
+    if(r==1){
+      while(m[x][y]==0&&y<mrc){
+        m[x][y] = a[z];
+        y++;
+        z++;
+      }
+      y--;
+      x++;
+      r++;
+    }else if(r==2){
+      while(m[x][y]==0&&x<mrc){
+        m[x][y] = a[z];
+        z++;
+        x++;
+      }
+      x--;
+      y--;
+      r++;
+    }else if(r==3){
+      while(m[x][y]==0&&y>=0){
+        m[x][y] = a[z];
+        z++;
+        y--;
+      }
+      y++;
+      x--;
+      r++;
+    }else if(r==4){
+      while(m[x][y]==0&&x>=0){
+        m[x][y] = a[z];
+        z++;
+        x--;
+      }
+      x++;
+      y++;
+      r = 1;
+    }
+    cnt = 0;
+    for(int i=0;i<mrc;i++){
+      for(int j=0;j<mrc;j++){
+        if(m[i][j]!=0){
+          cnt++;
+        }
+      }
+    }
+  }
+  for(int i=0;i<mrc;i++){
+    for(int j=0;j<mrc;j++){
+      if(j!=mrc-1){
+        cout << m[i][j] << " ";
+      }else{
+      cout << m[i][j];
+      }
+    }
+    if(i!=mrc-1){
+      cout << endl;
+    }
+  }
+  return 0;
+}

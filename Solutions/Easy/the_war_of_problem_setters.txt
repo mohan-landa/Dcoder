@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+//Compiler version gcc  6.3.0
+
+int main()
+{
+  int a,b,c,d,e,f;
+  scanf("%d%d%d%d%d%d",&a,&b,&c,&d,&e,&f);
+  int x=a+b+c;
+  int y=d+e+f;
+  int s = x-y;
+  if(s<0){
+    s = -s;
+  }
+  if(x>y){
+    printf("Garry %d",s);
+  }else if(x<y){
+    printf("Sharry %d",s);
+  }else{
+    printf("None 0");
+  }
+  return 0;
+}

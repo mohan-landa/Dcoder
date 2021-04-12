@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int a;
+    cin >> a;
+    int p=2;
+    if(a==1||a==2){
+      cout << "No";
+    }else{
+      int z = 0;
+      for(int i=2;i<a;i++){
+        if(a%i==0){
+          z++;
+        }
+      }
+      if(z==0){
+        p = 1;
+        cout << "No";
+        return 0;
+      }else{
+        p = 0;
+        int pri[25];
+        int c = 1;
+        pri[0] = 2;
+        for(int i=3;i<a;i++){
+          int y = 0;
+          for(int j=2;j<i;j++){
+            if(i%j==0){
+              y++;
+            }
+          }
+          if(y==0){
+            pri[c] = i;
+            c++;
+          }
+        }
+       /* for(int i=0;i<c;i++){
+          cout << pri[i] << " ";
+        } */
+        for(int i=0;i<c;i++){
+          for(int j=c-1;j>=0;j--){
+            int m = pri[i]+pri[j];
+            if(m==a){
+              cout << pri[i] << " " << pri[j] << endl; 
+              pri[i] = 0;
+              pri[j] = 0;
+            }
+          }
+        }
+      }
+    }
+    return 0;
+}

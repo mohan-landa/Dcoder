@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int t;
+    cin>>t;
+    for(int i=0;i<t;i++){
+      string a;
+      cin>>a;
+      int b = a.length();
+      int c = a[0] - '0';
+      int d = a[b-1] - '0';
+      cout << c+d << endl;
+    }
+    return 0;
+}

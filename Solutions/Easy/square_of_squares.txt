@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main(){
+    int a;
+    cin>>a;
+    double b=sqrt(a);
+    if(a<0){
+      cout << "NO";
+    }else{
+      int x = b;
+      double d = b-x;
+      if(d==0){
+        printf("YES");
+      }else{
+        cout << "NO";
+      }
+    }
+    return 0;
+}

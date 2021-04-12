@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string s;
+    getline(cin,s);
+    int l = s.length();
+    int min = 0,max = 0,fmin = 0,fmax = 0;
+    int c = 0;
+    int length = 0;
+    for(int i=0;i<l;i++){
+      if(s[i]<='z'&&s[i]>='a'){
+        if(c==0){
+          min = i;
+          c++;
+        }else{
+          max = i;
+        }
+      }else{
+        int temp = max-min+1;
+        if(temp>length){
+          length = temp;
+          fmin = min;
+          fmax = max;
+        }
+        c = 0;
+      }
+    }
+    int temp = max-min+1;
+        if(temp>length){
+          length = temp;
+          fmin = min;
+          fmax = max;
+        }
+    for(int i=fmin;i<=fmax;i++){
+      cout << s[i] ;
+    }
+    return 0;
+}

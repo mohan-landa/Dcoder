@@ -1,0 +1,63 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void msort(int s,int f,int p[]){
+  for(int i=s;i<=f;i++){
+    for(int j=i+1;j<=f;j++){
+      if(p[i]>p[j]){
+        int t = p[i];
+        p[i] = p[j];
+        p[j] = t;
+      }
+    }
+  }
+}
+
+int main(){
+  int total = 0;
+  int n;
+  cin >> n;
+  int p[n+1],c[n+1];
+  for(int i=1;i<=n;i++){
+    cin >> p[i] >> c[i];
+    total += p[i];
+  }
+  for(int i=1;i<=n;i++){
+    for(int j=i+1;j<=n;j++){
+      if(c[i]<c[j]){
+        int t = c[j];
+        c[j] = c[i];
+        c[i] = t;
+        t = p[i];
+        p[i] = p[j];
+        p[j] = t;
+      }
+    }
+  }
+  for(int i=1;i<=n;i++){
+    int s = i,f = i;
+    while(f+1<=n && c[s]==c[f+1]){
+      f++;
+      i++;
+    }
+    msort(s,f,p);
+  }
+  for(int m=1;m<=total;m++){
+    int z = m;
+    int flag = 0;
+    for(int i=1;i<=n;i++){
+      z -= p[i];
+      if(z<0){
+        i = n+1;
+        flag = 1;
+      }else{
+        z += c[i];
+      }
+    }
+    if(flag==0){
+      cout << m;
+      return 0;
+    }
+  }
+  return 0;
+}

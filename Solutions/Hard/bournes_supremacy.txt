@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int t;
+    cin >> t;
+    for(int o=0;o<t;o++){
+      int n;
+      cin >> n;
+      int a[n];
+      for(int i=0;i<n;i++){
+        cin >> a[i];
+      }
+      int s,d;
+      cin >> s >> d;
+      int c = 0;
+      int b = a[s-1];
+      while(b!=d&&c<1000){
+        b = a[b-1];
+        c++;
+      }
+      if(c==1000){
+        cout << "No\n";
+      }else{
+        cout << "Yes\n";
+      }
+    }
+    return 0;
+}

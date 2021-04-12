@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+
+int main(){
+  ll t;
+  cin >> t;
+  for(int o=0;o<t;o++){
+    ll n;
+    cin >> n;
+    int f = 0;
+    for(ll i=1;i<=15;i++){
+      ll z = pow(i,i);
+      if(z==n){
+        f = 1;
+        i = 11;
+      }
+    }
+    if(f==1){
+      cout << "Yes ";
+    }else{
+      cout << "No ";
+    }
+  }
+  return 0;
+}

@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int w;
+    cin >> w;
+    int a,aa,b,bb;
+    cin >> a >> aa >> b >> bb;
+    if((aa+bb)<=w){
+      cout << a+b;
+      return 0;
+    }else if(aa>w&&bb<=w){
+        cout << b;
+        return 0;
+    }else if(aa>w&&bb>w){
+       cout << 0;
+       return 0;
+     } else if(aa<=w&&bb>w){
+        cout << a;
+        return 0;
+    }else{
+        if(a>b){
+          cout << a;
+          return 0;
+        }else{
+          cout << b;
+          return 0;
+        }
+      }
+     if(aa>w&&bb>w){
+       cout << 0;
+     }
+    return 0;
+}

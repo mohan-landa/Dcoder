@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int a,b;
+    cin >> a >> b;
+    int c = b+(a/2);
+    if(c<=a-1){
+      cout << c;
+    }else{
+      cout << c-a;
+    }
+    return 0;
+}

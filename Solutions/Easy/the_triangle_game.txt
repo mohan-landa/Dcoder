@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+
+//Compiler version gcc  6.3.0
+
+int main()
+{
+  char a[6];
+  scanf("%s",a);
+  //printf("%s",a);
+  for(int i=0;i<strlen(a);i++){
+    for(int j=0;j<i+1;j++){
+      printf("%c",*(a+j));
+    }
+    printf("\n");
+  }
+  return 0;
+}

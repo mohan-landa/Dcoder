@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+//Compiler version gcc  6.3.0
+
+int main()
+{
+  int a,b,c;
+  scanf("%d%d%d",&a,&b,&c);
+  if(b>c){
+    printf("Alex");
+  }else if(b<c){
+    printf("Ryan");
+  }else{
+    printf("Draw");
+  }
+  return 0;
+}

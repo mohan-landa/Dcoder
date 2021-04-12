@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    long long n,q;
+    cin >> n >> q;
+    string a;
+    cin >> a;
+    long long b = a.length();
+    for(long long i=0;i<q;i++){
+      string p = a;
+      long long l,r;
+      cin >> l >> r;
+      l = l-1;
+      r = r-1;
+      if(l==r){
+        cout << p[l] << endl;
+      }else{
+      for(long long j=l;j<=r;j++){
+        for(long long k=j;k<=r;k++){
+          if(p[j]>p[k]){
+            char t = p[j];
+            p[j] = p[k];
+            p[k] = t;
+          }
+        }
+      }
+      cout << p[l] << endl;
+      }
+    }
+    return 0;
+}

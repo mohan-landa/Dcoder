@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int t;
+    cin >> t;
+    for(int o=0;o<t;o++){
+      string a;
+      cin >> a;
+      int b = a.length();
+      if(a[b-1]=='t'&&a[b-2]=='s'&&a[b-3]=='e'){
+        cout << a << endl;
+      }else if(a[b-1]=='r'&&a[b-2]=='e'){
+        for(int i=0;i<b-2;i++){
+          cout << a[i];
+        }
+        cout << "est" << endl;
+      }else if(a[b-1]=='e'){
+        cout << a << "r" << endl;
+      }else{
+        cout << a << "er" << endl;
+      }
+    }
+    return 0;
+}

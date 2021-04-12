@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+//Compiler version gcc  6.3.0
+
+int main()
+{
+  int a;
+  scanf("%d",&a);
+  int n[a];
+  for(int i=0;i<a;i++){
+    scanf("%d",&n[i]);
+  }
+  for(int j=a-1;j>-1;j--){
+    printf("%d ",n[j]);
+  }
+  return 0;
+}

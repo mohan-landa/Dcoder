@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    string a;
+    cin >> a;
+    int x =0, y = 0;
+    int b = a.length();
+    for(int i=0;i<b-2;i++){
+      if(a[i]=='^'&&a[i+1]=='_'){
+        x++;
+      }else if(a[i]=='-'&&a[i+1]=='_'){
+        y++;
+      }
+    }
+    if(x>y){
+      cout << "Cody is happy with Dcoder";
+    }else if(x<y){
+      cout << "Cody wants to leave job";
+    }else{
+      cout << "Cody doesn't know what to do";
+    }
+    return 0;
+}

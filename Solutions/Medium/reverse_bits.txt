@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int t;
+    cin >> t;
+    for(int i=0;i<t;i++){
+      int a;
+      cin >> a;
+      int b=a,c=0,j=0;
+      string x;
+      while(a!=0){
+        b = a%2;
+        if(b==0){
+          x[j] = '0';
+        }else{
+          x[j] = '1';
+        }
+        //cout << x[j] << " ";
+        //c += b*pow(2,j); 
+        j++;
+        a = a/2;
+      }
+     int p=0;
+      for(int l=j-1;l>=0;l--){
+        //cout << x[l];
+        int z = x[l] - '0';
+        //cout << c << " ";
+        c += z*pow(2,p);
+        p++;
+      }
+      cout << c << endl;
+    }
+    return 0;
+}

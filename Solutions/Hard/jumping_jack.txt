@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int t;
+    cin >> t;
+    for(int i=0;i<t;i++){
+      int n;
+      cin >> n;
+      int a[n];
+      for(int j=0;j<n;j++){
+        cin >> a[j];
+      }
+      for(int j=0;j<n;j++){
+        int c = 0;
+        for(int k=0;k<j;k++){
+          if(a[k]<a[j]){
+            c++;
+          }
+        }
+        cout << c  << " ";
+      }
+      cout << endl;
+    }
+}

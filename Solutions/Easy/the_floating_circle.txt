@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    double r;
+    cin>>r;
+    double a = r*r*3.14;
+    if(r<=0){
+      cout << 0;
+    }else{
+    printf("%.2lf",a);}
+}

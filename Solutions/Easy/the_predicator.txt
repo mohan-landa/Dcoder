@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    string a;
+    cin >> a;
+    long long b= a.length();
+    for(long long i=0;i<b-5;i++){
+      if(a[i]=='1' && a[i+1]=='1' && a[i+2]=='1'/&&a[i+3]=='1'&&a[i+4]=='1'&&a[i+5]=='1'/){
+        cout << "Bad";
+        return 0;
+      }else if(a[i]=='0'&&a[i+1]=='0'&&a[i+2]=='0'&&a[i+3]=='0'&&a[i+4]=='0'&&a[i+5]=='0'){
+        printf("Bad");
+        return 0;
+      }
+      
+    }
+    printf("Good");
+    return 0;
+}

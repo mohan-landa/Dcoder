@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+void permute(string s){
+  sort(s.begin(),s.end());
+  do{
+    cout << s << " ";
+  }while(next_permutation(s.begin(),s.end()));
+}
+
+int main()
+{
+    string s;
+    cin >> s;
+    permute(s);
+    return 0;
+}

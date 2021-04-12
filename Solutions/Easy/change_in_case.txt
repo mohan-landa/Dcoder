@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+//Compiler version gcc  6.3.0
+
+int main()
+{
+  int n;
+  scanf("%d",&n);
+  char a[n];
+  scanf("%s",a);
+ // printf("%c",a[0]);
+  int b,c;
+  scanf("%d%d",&b,&c);
+  if(a[b]>='a' && a[b]<='z'){
+    a[b] -= 32;
+  }else if(a[b]>='A' && a[b]<='Z'){
+    a[b] += 32;
+  }
+  if(a[c]>='a' && a[c]<='z'){
+    a[c] -= 32;
+  }else if(a[c]>='A' && a[c]<='Z'){
+    a[c] += 32;
+  }
+  printf("%s",a);
+  return 0;
+}

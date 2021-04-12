@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int t;
+    cin >> t;
+    for(int i=0;i<t;i++){
+      long long n,m;
+      cin >> n >> m;
+      /*for(int j=1;j<100;j++){
+        if(n*j%m==0){
+          cout << j << endl;
+          break;
+        }
+      }*/
+      long long j=1;
+      while((n*j)%m!=0){
+        j++;
+      }
+      if(i!=t-1){
+      cout << j << endl;}else{
+        cout << j;
+      }
+    }
+}

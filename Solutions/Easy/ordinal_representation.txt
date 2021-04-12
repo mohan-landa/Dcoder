@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int a;
+    cin>> a;
+    switch(a){
+      case 1:
+        cout << "1st";
+        break;
+      case 2:
+        cout << "2nd";
+        break;
+      case 3:
+        cout << "3rd";
+        break;
+      default:
+        cout <<  a << "th";
+        break;
+      }
+      
+}

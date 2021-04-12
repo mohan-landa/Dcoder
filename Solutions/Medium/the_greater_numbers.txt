@@ -1,0 +1,103 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int facto(int n){
+  if(n==1||n==1){
+    return 1;
+  }else{
+    return n*facto(n-1);
+  }
+}
+
+int main()
+{
+    string a;
+    cin >> a;
+    
+    int b= a.length();
+    
+    int real = 0;
+    int ppp = 0;
+    for(int i=b-1;i>=0;i--){
+      int t = a[i];
+      t = t-48;
+      real += t*pow(10,ppp);
+      ppp++;
+    }
+    
+    for(int i=0;i<b;i++){
+      for(int j=i;j<b;j++){
+        if(a[i]>a[j]){
+          char t = a[i];
+          a[i] = a[j];
+          a[j] = t;
+        }
+      }
+    }
+    
+    int min = 0;
+    int c = 0;
+    for(int i=b-1;i>=0;i--){
+      int t = a[i];
+      t = t-48;
+      min += t*pow(10,c);
+      c++;
+    }
+    
+    int max = 0;
+    c = 0;
+    for(int i=0;i<b;i++){
+      int t = a[i];
+      t = t-48;
+      max += t*pow(10,c);
+      c++;
+    }
+    
+    int d = facto(b);
+    int num[d];
+    int n=0;
+    int x[10],y[10];
+    for(int i=0;i<10;i++){
+      y[i] = 0;
+    }
+    for(int i=0;i<b;i++){
+      int t = a[i];
+      t -= 48;
+      y[t]++;
+    }
+    /*for(int i=0;i<10;i++){
+      cout << y[i] << " ";
+    }*/
+    for(int i=min;i<=max;i++){
+      for(int k=0;k<10;k++){
+      x[k] = 0;
+      }
+      string f = to_string(i);
+      int g = f.length();
+      for(int j=0;j<g;j++){
+        int t = f[j];
+        t -= 48;
+        x[t]++;
+      }
+      int z = 0;
+      for(int j=0;j<10;j++){
+        if(x[j]==y[j]){
+          z++;
+        }
+      }
+      if(z==10){
+        num[n] = i;
+        n++;
+      }
+    }
+    int count = 0;
+    for(int i=0;i<d;i++){
+      if(num[i]>real){
+        count++;
+      }
+    }
+    cout << count;
+    return 0;
+}

@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+//Compiler version gcc  6.3.0
+
+int main()
+{
+  int a,s=0;
+  scanf("%d",&a);
+  for(int i=1;i<a+1;i++){
+    s = s + i;
+  }
+  printf("%d",s);
+  return 0;
+}

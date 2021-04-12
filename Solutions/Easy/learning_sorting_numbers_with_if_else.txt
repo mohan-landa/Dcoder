@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+//Compiler version gcc  6.3.0
+
+int main()
+{
+  int a[3];
+  scanf("%d%d%d",&a[0],&a[1],&a[2]);
+ /* if(a>b){
+    int t = a;
+    a =b;
+    b = t;
+    if(b>c){
+    int k = c;
+    c =b;
+    b = k;
+  }
+  }else if(a<b && b>c){
+    int t = b;
+    b =c;
+    c= t;
+  }/*/
+    
+    
+    for(int i=0;i<3;i++){
+      for(int j=i;j<3;j++){
+        if(a[i]>a[j]){
+          int t = a[i];
+          a[i] = a[j];
+          a[j] = t;
+        }
+      }
+    }
+  printf("%d %d %d",a[0],a[1],a[2]);
+  return 0;
+}

@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int a;
+    cin >> a;
+    int c = a/100;
+    if(a%100==0){
+      c = c;
+    }else{
+      c+=1;
+    }
+    if(c==1 || c==21 ){
+    printf("%dst",c);
+  }else if(c==2 || c==22 ){
+    printf("%dnd",c);
+  }else if(c==3 || c==23){
+    printf("%drd",c);
+  }else{
+    printf("%dth",c);
+  }
+    
+    return 0;
+}

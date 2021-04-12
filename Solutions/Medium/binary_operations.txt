@@ -1,0 +1,62 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int a,b;
+    cin >> a >> b;
+    string c = to_string(a);
+    string d = to_string(b);
+    int e = c.length();
+    int f = d.length();
+    
+    int g = 0,h =0;
+    for(int i=e-1;i>=0;i--){
+      int l = c[i]-'0';
+      g += l*pow(2,h);
+      h++;
+    }
+    
+    int m = 0,n =0;
+    for(int i=f-1;i>=0;i--){
+      int o = d[i]-'0';
+      m += o*pow(2,n);
+      n++;
+    }
+    int p = g+m;
+    int q = g*m;
+    
+    int r = p;
+    int t=0;
+    string u;
+    while(p!=0){
+      r = p%2;
+      string s = to_string(r);
+      u[t] = s[0];
+      t++;
+      p = p/2;
+    }
+    for(int i=t-1;i>=0;i--){
+      cout << u[i];
+    }
+    cout << endl;
+    
+    int v = q;
+    int w = 0;
+    string x;
+    while(q!=0){
+      v = q%2;
+      string y = to_string(v);
+      x[w] = y[0];
+        w++;
+      q = q/2;
+    }
+    for(int i=w-1;i>=0;i--){
+      cout << x[i];
+    }
+    return 0;
+}

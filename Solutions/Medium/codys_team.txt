@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int n,k,m=0;
+    cin >> n>> k;
+    int a[n],b[n-k+1];
+    for(int i=0;i<n;i++){
+      cin >> a[i];
+    }
+    for(int i=0;i<n-k+1;i++){
+      b[i] = 0;
+      for(int j=i;j<i+k;j++){
+        b[i] += a[j];
+      }
+      //cout << b[i];
+      if(b[i]>m){
+        m = b[i];
+      }
+    }
+    cout << m;
+    return 0;
+}

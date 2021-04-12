@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int f;
+    cin >> f;
+    int n;
+    cin >> n;
+    int a[n];
+    int c = 0;
+    for(int i=0;i<n;i++){
+      cin >> a[i];
+      int t = f;
+      if(f>a[i]){
+        t = a[i];
+      }
+      int z = 0;
+      for(int j=2;j<=t;j++){
+        if(a[i]%j==0&&f%j==0){
+          z++;
+        }
+      }
+      if(z==0){
+        c++;
+      }
+    }
+    cout << c;
+    return 0;
+}

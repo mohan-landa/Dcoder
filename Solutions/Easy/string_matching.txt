@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+void fn(void){
+  string a,b;
+  cin >> a >> b;
+  int c = a.length();
+  int d = b.length();
+  int cou=0;
+  for(int i=0;i<c-d+1;i++){
+    int z=0;
+    if(a[i]==b[0]){
+      int p=0;
+      for(int j=i;j<d+i;j++){
+        if(a[j]==b[p]){
+          p++;
+          z++;
+        }
+      }
+      if(z==d){
+        cou++;
+      }
+    }
+  }
+  if(cou==0){
+    cout << "No" << endl;
+  }else{
+    cout << "Yes" << endl;
+  }
+  
+}
+
+int main()
+{
+    int t;
+    cin>>t;
+    for(int i=0;i<t;i++){
+      fn();
+    }
+    return 0;
+}

@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int t;
+    cin >> t;
+    int z[26];
+    for(int i=0;i<26;i++){
+      z[i] = 0;
+    }
+    for(int i=0;i<t;i++){
+      string a;
+      cin >> a;
+      int b = a.length(),m=0;
+      for(int j=0;j<b;j++){
+        int p = a[j]-97;
+        z[p]++;
+      }
+      for(int j=0;j<26;j++){
+        if(z[j]!=0){
+          int w = z[j]%2;
+          if(w==0){
+            m = m + (z[j]/2);
+          }else{
+            m = m + (z[j]/2) + w;
+          }
+        }
+      }
+      cout << m << endl;
+      for(int j=0;j<26;j++){
+        z[j] = 0;
+      }
+    }
+    return 0;
+}

@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main(void)
+{
+    int q;
+    cin >> q;
+    stack<int> s;
+    s.push(100);
+    while(q--){
+      string a;
+      cin >> a;
+      if(a=="PUSH"){
+        int n;
+        cin >> n;
+        s.push(n);
+      }else if(a=="PEEK"){
+        cout << s.top() << endl;
+      }else{
+        s.pop();
+      }
+    }
+    int t = 0;
+    while(s.top()!=100){
+      t += s.top();
+      s.pop();
+    }
+    cout << t;
+    return 0;
+}

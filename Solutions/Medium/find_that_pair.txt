@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int n,k;
+    cin >> n >> k;
+    int a[n];
+    for(int i=0;i<n;i++){
+      cin >> a[i];
+    }
+    int z = 0;
+    for(int i=0;i<n;i++){
+      int b = a[i];
+      for(int j=0;j<n;j++){
+        if(j!=i){
+          int c = a[j]+b;
+          if(c==k){
+            cout << "Yes";
+            return 0;
+          }
+        }
+      }
+    }
+    cout << "No";
+    return 0;
+}

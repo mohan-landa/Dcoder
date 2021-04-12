@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  int t;
+  cin >> t;
+  int tt = t;
+  int cnt = 0;
+  while(t--){
+    cnt++;
+    string a;
+    cin >> a;
+    int l = a.length();
+    int k = l/2;
+    cout << a[0];
+    if(k>=3){
+      cout << a[2];
+    }
+    if(cnt!=tt){
+      cout << endl;
+    }
+  }
+  return 0;
+}

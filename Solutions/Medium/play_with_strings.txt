@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int t;
+    cin >> t;
+    string tt;
+    getline(cin,tt);
+    cin.sync();
+    cin.clear();
+    for(int o=0;o<t;o++){
+      string a;
+      getline(cin,a);
+      cin.sync();
+      cin.clear();
+      int b = a.length();
+      int c = 0,n=0;
+      while(c<=b){
+        if(a[c]!=' '&&c!=b){
+          c++;
+          n++;
+        }else{
+          --c;
+          for(int i=c;i>c-n;i--){
+            cout << a[i];
+          }
+          if(c!=b-1){
+          cout << " ";
+          }
+          ++c;
+          ++c;
+          n=0;
+        }
+      }
+      cout << endl;
+    }
+    return 0;
+}

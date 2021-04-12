@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+//Compiler version gcc  6.3.0
+
+int main()
+{
+  int a;
+  scanf("%d",&a);
+  int b=(9*a)/5;
+  printf("%d",b+32);
+  return 0;
+}

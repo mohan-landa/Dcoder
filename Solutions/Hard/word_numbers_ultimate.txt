@@ -1,0 +1,433 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+
+string zero(ll a);
+string two(ll a);
+string three(ll a);
+string four(ll a);
+string five(ll a);
+string six(ll a);
+string seven(ll a);
+string eight(ll a);
+string nine(ll a);
+string ten(ll a);
+string eleven(ll a);
+string twelve(ll a);
+
+int main(){
+  ll n;
+  cin >> n;
+  ll a = n,cnt=0;
+  while(a!=0){
+    a/=10;
+    cnt++;
+  }
+  a = n;
+  ll b[cnt];
+  for(ll i=0;i<cnt;i++){
+    ll temp = a%10;
+    b[i] = temp;
+    a /= 10;
+  }
+  string ans = "";
+  //
+  if(n==0){
+    cout << "zero";
+    return 0;
+  }
+  if(cnt==1){
+    ans += zero(n);
+    cout << ans;
+    return 0;
+  }
+  if(cnt==2){
+    ans += two(n);
+    cout << ans;
+    return 0;
+  }
+  if(cnt==3){
+    ans += three(n);
+    cout << ans;
+    return 0;
+  }
+  if(cnt==4){
+    ans += four(n);
+    cout << ans;
+    return 0;
+  }
+  if(cnt==5){
+    ans += five(n);
+    cout << ans;
+    return 0;
+  }
+  if(cnt==6){
+    ans += six(n);
+    cout << ans;
+    return 0;
+  }
+  if(cnt==7){
+    ans += seven(n);
+    cout << ans;
+    return 0;
+  }
+  if(cnt==8){
+    ans += eight(n);
+    cout << ans;
+    return 0;
+  }
+  if(cnt==9){
+    ans += nine(n);
+    cout << ans;
+    return 0;
+  }
+  if(cnt==10){
+    ans += ten(n);
+    cout << ans;
+    return 0;
+  }
+  if(cnt==11){
+    ans += eleven(n);
+    cout << ans;
+    return 0;
+  }
+  if(cnt==12){
+    ans += twelve(n);
+    cout << ans;
+    return 0;
+  }
+  //
+  cout << ans;
+  return 0;
+}
+
+string zero(ll a){
+  string ans;
+  if(a==0){
+    ans = "";
+  }else if(a==1){
+    ans = "one ";
+  }else if(a==2){
+    ans = "two ";
+  }else if(a==3){
+    ans = "three ";
+  }else if(a==4){
+    ans = "four ";
+  }else if(a==5){
+    ans = "five ";
+  }else if(a==6){
+    ans = "six ";
+  }else if(a==7){
+    ans = "seven ";
+  }else if(a==8){
+    ans = "eight ";
+  }else if(a==9){
+    ans = "nine ";
+  }
+  return ans;
+}
+
+string two(ll a){
+  string ans;
+  if(a>=10&&a<20){
+    if(a==10){
+      ans += "ten ";
+    }else if(a==11){
+      ans += "eleven ";
+    }else if(a==12){
+      ans += "twelve ";
+    }else if(a==13){
+      ans += "thirteen ";
+    }else if(a==14){
+      ans += "fourteen ";
+    }else if(a==15){
+      ans += "fifteen ";
+    }else if(a==16){
+      ans += "sixteen ";
+    }else if(a==17){
+      ans += "seventeen ";
+    }else if(a==18){
+      ans += "eighteen ";
+    }else if(a==19){
+      ans += "nineteen ";
+    }
+  }else if(a>=20&&a<30){
+    if(a==20){
+      ans += "twenty ";
+    }else{
+      ans += "twenty ";
+      ans += zero(a%10);
+    }
+  }else if(a>=30&&a<40){
+    if(a==30){
+      ans += "thirty ";
+    }else{
+      ans += "thirty ";
+      ans += zero(a%10);
+    }
+  }else if(a>=40&&a<50){
+    if(a==40){
+      ans += "forty ";
+    }else{
+      ans += "forty ";
+      ans += zero(a%10);
+    }
+  }else if(a>=50&&a<60){
+    if(a==50){
+      ans += "fifty ";
+    }else{
+      ans += "fifty ";
+      ans += zero(a%10);
+    }
+  }else if(a>=60&&a<70){
+    if(a==60){
+      ans += "sixty ";
+    }else{
+      ans += "sixty ";
+      ans += zero(a%10);
+    }
+  }else if(a>=70&&a<80){
+    if(a==70){
+      ans += "seventy ";
+    }else{
+      ans += "seventy ";
+      ans += zero(a%10);
+    }
+  }else if(a>=80&&a<90){
+    if(a==80){
+      ans += "eighty ";
+    }else{
+      ans += "eighty ";
+      ans += zero(a%10);
+    }
+  }else if(a>=90&&a<100){
+    if(a==90){
+      ans += "ninety ";
+    }else{
+      ans += "ninety ";
+      ans += zero(a%10);
+    }
+  }
+  return ans;
+}
+
+string three(ll a){
+  string ans;
+  ans += zero(a/100);
+  ans += "hundred ";
+  ll z = a%100;
+  if(z<10){
+    ans += zero(z);
+  }else{
+    ans += two(a%100);
+  }
+  return ans;
+}
+
+string four(ll a){
+  string ans;
+  ans += zero(a/1000);
+  ans += "thousand ";
+  ll z = a%1000;
+  if(z==0){
+    return ans;
+  }else if(z<10){
+    ans += zero(a%10);
+  }else if(z<100){
+    ans += two(a%100);
+  }else{
+    ans += three(a%1000);
+  }
+  return ans;
+}
+
+string five(ll a){
+  string ans;
+  ans += two(a/1000);
+  ans += "thousand ";
+  ll z = a%1000;
+  if(z==0){
+    return ans;
+  }else if(z<10){
+    ans += zero(a%10);
+  }else if(z<100){
+    ans += two(a%100);
+  }else{
+    ans += three(a%1000);
+  }
+  return ans;
+}
+
+string six(ll a){
+  string ans;
+  ans += three(a/1000);
+  ans += "thousand ";
+  ll z = a%1000;
+  if(z==0){
+    return ans;
+  }else if(z<10){
+    ans += zero(a%10);
+  }else if(z<100){
+    ans += two(a%100);
+  }else{
+    ans += three(a%1000);
+  }
+  return ans;
+}
+
+string seven(ll a){
+  string ans;
+  ans += zero(a/1000000);
+  ans += "million ";
+  ll z = a%1000000;
+  if(z==0){
+    return ans;
+  }else if(z<10){
+    ans += zero(a%10);
+  }else if(z<100){
+    ans += two(a%100);
+  }else if(z<1000){
+    ans += three(a%1000);
+  }else if(z<10000){
+    ans += four(a%100000);
+  }else if(z<100000){
+    ans += five(a%100000);
+  }else if(z<1000000){
+    ans += six(a%1000000);
+  }
+  return ans;
+}
+
+string eight(ll a){
+  string ans;
+  ans += two(a/1000000);
+  ans += "million ";
+  ll z = a%1000000;
+  if(z==0){
+    return ans;
+  }else if(z<10){
+    ans += zero(a%10);
+  }else if(z<100){
+    ans += two(a%100);
+  }else if(z<1000){
+    ans += three(a%1000);
+  }else if(z<10000){
+    ans += four(a%100000);
+  }else if(z<100000){
+    ans += five(a%100000);
+  }else if(z<1000000){
+    ans += six(a%1000000);
+  }
+  return ans;
+}
+
+string nine(ll a){
+  string ans;
+  ans += three(a/1000000);
+  ans += "million ";
+  ll z = a%1000000;
+  if(z==0){
+    return ans;
+  }else if(z<10){
+    ans += zero(a%10);
+  }else if(z<100){
+    ans += two(a%100);
+  }else if(z<1000){
+    ans += three(a%1000);
+  }else if(z<10000){
+    ans += four(a%100000);
+  }else if(z<100000){
+    ans += five(a%100000);
+  }else if(z<1000000){
+    ans += six(a%1000000);
+  }
+  return ans;
+}
+
+string ten(ll a){
+  string ans;
+  ans += zero(a/1000000000);
+  ans += "billion ";
+  ll z = a%1000000000;
+  if(z==0){
+    return ans;
+  }else if(z<10){
+    ans += zero(a%10);
+  }else if(z<100){
+    ans += two(a%100);
+  }else if(z<1000){
+    ans += three(a%1000);
+  }else if(z<10000){
+    ans += four(a%100000);
+  }else if(z<100000){
+    ans += five(a%100000);
+  }else if(z<1000000){
+    ans += six(a%1000000);
+  }else if(z<10000000){
+    ans += seven(a%10000000);
+  }else if(z<100000000){
+    ans += eight(a%100000000);
+  }else if(z<1000000000){
+    ans += nine(a%1000000000);
+  }
+  return ans;
+}
+
+string eleven(ll a){
+  string ans;
+  ans += two(a/1000000000);
+  ans += "billion ";
+  ll z = a%1000000000;
+  if(z==0){
+    return ans;
+  }else if(z<10){
+    ans += zero(a%10);
+  }else if(z<100){
+    ans += two(a%100);
+  }else if(z<1000){
+    ans += three(a%1000);
+  }else if(z<10000){
+    ans += four(a%100000);
+  }else if(z<100000){
+    ans += five(a%100000);
+  }else if(z<1000000){
+    ans += six(a%1000000);
+  }else if(z<10000000){
+    ans += seven(a%10000000);
+  }else if(z<100000000){
+    ans += eight(a%100000000);
+  }else if(z<1000000000){
+    ans += nine(a%1000000000);
+  }
+  return ans;
+}
+
+string twelve(ll a){
+  string ans;
+  ans += three(a/1000000000);
+  ans += "billion ";
+  ll z = a%1000000000;
+  if(z==0){
+    return ans;
+  }else if(z<10){
+    ans += zero(a%10);
+  }else if(z<100){
+    ans += two(a%100);
+  }else if(z<1000){
+    ans += three(a%1000);
+  }else if(z<10000){
+    ans += four(a%100000);
+  }else if(z<100000){
+    ans += five(a%100000);
+  }else if(z<1000000){
+    ans += six(a%1000000);
+  }else if(z<10000000){
+    ans += seven(a%10000000);
+  }else if(z<100000000){
+    ans += eight(a%100000000);
+  }else if(z<1000000000){
+    ans += nine(a%1000000000);
+  }
+  return ans;
+}

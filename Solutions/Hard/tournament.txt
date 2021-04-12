@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int t;
+    cin >> t;
+    for(int z=0;z<t;z++){
+      int n,m;
+      cin >> n >> m;
+      int ma=0;
+      for(int i=n-1;i>0;i--){
+        ma = ma + i*m;
+      }
+      cout << ma << endl;
+    }
+    return 0;
+}

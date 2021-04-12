@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int t;
+    cin>>t;
+    for(int o=0;o<t;o++){
+      int n;
+      cin >> n;
+      int a[n];
+      for(int i=0;i<n;i++){
+        cin >> a[i];
+      }
+      int b[n-1];
+      for(int i=0;i<n-1;i++){
+        b[i] = a[i+1]-a[i];
+      }
+      int d=0;
+      for(int i=0;i<n-1;i++){
+        for(int j=i+1;j<n-1;j++){
+          if(b[i]==b[j]){
+            d=b[i];
+          }
+        }
+      }
+      int f = a[0];
+      for(int i=1;i<n;i++){
+        int t = f+i*d;
+        if(t!=a[i]){
+          cout << a[i] << endl;
+        }
+      }
+    }
+    return 0;
+}

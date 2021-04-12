@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int t;
+    cin >> t;
+    for(int i=0;i<t;i++){
+      int a,b;
+      cin >> a >> b;
+      int z = 0;
+      for(int j=1;j<=a;j++){
+        int c = j,d = j;
+        string e;
+        int f=0;
+        while(c!=0){
+          d = c%2;
+          string g = to_string(d);
+          e[f] = g[0];
+          f++;
+          c = c/2;
+        }
+        int h = 0;
+        for(int k=0;k<f-2;k++){
+          if(e[k]=='1'&&e[k+1]=='0'&&e[k+2]=='1'){
+            h++;
+          }
+        }
+        if(h>=b){
+          z++;
+        }
+      }
+      cout << z << endl;
+    }
+    return 0;
+}

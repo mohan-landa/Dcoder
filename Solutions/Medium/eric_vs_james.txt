@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    long long a,b;
+    cin >> a >> b;
+    long long c = b-a+1;
+    for(long long j=b;j<100000000;j++){
+      int z=0;
+    for(long long i=a;i<b+1;i++){
+      if(j%i==0){
+        z++;
+      }
+    }
+    if(z==c){
+      cout << j;
+      return 0;
+    }
+    }
+}

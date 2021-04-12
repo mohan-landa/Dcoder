@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+int ans(int n){
+  if(n==0){
+    return 0;
+  }else{
+    return (n*n)+ans(n-1);
+  }
+}
+
+int main()
+{
+    int t;
+    cin >> t;
+    for(int i=0;i<t;i++){
+      int n;
+      cin >> n;
+      cout << ans(n) << endl;
+    }
+}

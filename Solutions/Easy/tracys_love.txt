@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int a,b;
+    cin>>a>>b;
+    int c = a+b;
+    int d=a-b;
+    if(c==6){
+      cout << "Love";
+    }else if(d==-6 || d==6){
+      cout << "Love";
+    }else{
+      cout << "Hate";
+    }
+}

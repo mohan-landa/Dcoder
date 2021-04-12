@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+
+int main()
+{
+    int a;
+    cin >> a;
+    char s[a];
+    int k=0;
+    // a = 97 && z = 122;
+    for(int i=0;i<a;i++){
+      
+      s[i] = 96+a-k;
+      k++;
+      cout << s[i];
+    }
+    
+    return 0;
+}
